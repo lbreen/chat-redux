@@ -11,15 +11,15 @@ import '../assets/stylesheets/application.scss';
 
 // State and reducers
 import messagesReducer from './reducers/messages_reducer';
-import channelReducer from './reducers/channels_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
-import currentUserReducer from './reducers/current_user_reducer';
+
+const identityReducer = (state = null) => state;
 
 const reducers = combineReducers({
   messages: messagesReducer,
-  channels: channelReducer,
-  selectedChannel: selectedChannelReducer,
-  currentUser: currentUserReducer
+  channels: identityReducer,
+  currentUser: identityReducer,
+  selectedChannel: selectedChannelReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

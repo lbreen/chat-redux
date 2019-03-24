@@ -1,4 +1,4 @@
-import { SET_MESSAGES, CREATE_MESSAGE } from '../actions';
+import { FETCH_MESSAGES, CREATE_MESSAGE } from '../actions';
 
 export default function(state, action) {
   if (state === undefined) {
@@ -6,11 +6,14 @@ export default function(state, action) {
   }
 
   switch (action.type) {
-    case SET_MESSAGES:
+    case FETCH_MESSAGES: {
       return action.payload.messages;
-    case CREATE_MESSAGE: return {
-      // TODO
-    };
+    }
+    case CREATE_MESSAGE: {
+      const copiedState = state.slice(0);
+      copiedState.push(action.payload);
+      return copiedState;
+    }
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Message = ({ message: { author, content, createdAt } }) => {
-  const time = new Date(createdAt).toLocaleTimeString();
+const Message = ({ message: { author, content, created_at } }) => {
+  const time = new Date(created_at).toLocaleTimeString();
 
   return (
     <div className="message">
