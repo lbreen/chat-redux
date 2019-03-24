@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setMessages } from '../actions/index';
+
 import Message from '../components/message';
+import MessageForm from './message_form';
 
 class MessageList extends Component {
   componentWillMount() {
@@ -14,15 +16,22 @@ class MessageList extends Component {
 
     if (messages === []) {
       return (
-        <div className="message-list">
-          {messages.map(message => <Message message={message} key={message.createdAt} />)}
+        <div className="messages-container">
+          <div className="messages-list">
+            {messages.map(message => <Message message={message} key={message.createdAt} />)}
+          </div>
+          <MessageForm />
         </div>
+
       );
     }
 
     return (
-      <div className="message-list">
-        <p className="no-messages">No messages yet!</p>
+      <div className="messages-container">
+        <div className="messages-list">
+          <p className="no-messages">No messages yet!</p>
+        </div>
+        <MessageForm />
       </div>
     );
   }
