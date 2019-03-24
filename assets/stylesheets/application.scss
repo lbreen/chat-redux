@@ -11,6 +11,18 @@ body {
 .channel-list {
   width: 20%;
   background-color: #F4F4F4;
+  padding: 24px;
+  list-style-type: none;
+}
+.channel {
+  margin: 12px 0;
+  font-size: 24px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.selected {
+  font-weight: bold;
 }
 .messages-container {
   width: 80%;
